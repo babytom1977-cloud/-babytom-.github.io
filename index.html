@@ -10,6 +10,8 @@
         .quiz-option { transition: all 0.2s; }
         .sidebar-link { transition: all 0.2s; }
         .sidebar-link:hover { background-color: rgba(99, 102, 241, 0.1); }
+        .question-nav-btn { transition: all 0.2s; }
+        .question-nav-btn:hover { transform: scale(1.1); }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -235,88 +237,150 @@
         let currentQuizState = {
             currentQuestion: 0,
             score: 0,
-            selectedAnswer: null,
+            selectedAnswers: {}, // Store all selected answers
             answers: []
         };
 
         function renderQuiz(quizData) {
             const quiz = quizData.quiz;
             const question = quiz.questions[currentQuizState.currentQuestion];
+            const questionNum = currentQuizState.currentQuestion;
+            const selectedAnswer = currentQuizState.selectedAnswers[questionNum];
             
             return `
-                <div class="max-w-3xl mx-auto">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Quiz Header -->
                     <div class="mb-6">
                         <h2 class="text-2xl font-bold text-gray-800 mb-2">${quiz.title}</h2>
-                        <div class="flex items-center justify-between">
-                            <span class="text-gray-600">Question ${currentQuizState.currentQuestion + 1} of ${quiz.questions.length}</span>
-                            <span class="bg-indigo-100 px-3 py-1 rounded-full text-indigo-800 font-semibold">Score: ${currentQuizState.score}/${quiz.questions.length}</span>
+                        <div class="flex items-center justify-between flex-wrap gap-3">
+                            <span class="text-gray-600">Question ${questionNum + 1} of ${quiz.questions.length}</span>
+                            <span class="bg-indigo-100 px-3 py-1 rounded-full text-indigo-800 font-semibold">
+                                Answered: ${Object.keys(currentQuizState.selectedAnswers).length}/${quiz.questions.length}
+                            </span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
-                            <div class="bg-indigo-600 h-2 rounded-full transition-all" style="width: ${((currentQuizState.currentQuestion + 1) / quiz.questions.length) * 100}%"></div>
+                            <div class="bg-indigo-600 h-2 rounded-full transition-all" 
+                                style="width: ${(Object.keys(currentQuizState.selectedAnswers).length / quiz.questions.length) * 100}%">
+                            </div>
                         </div>
                     </div>
 
+                    <!-- Question Navigator -->
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <h3 class="text-sm font-semibold text-gray-700 mb-3">Jump to Question:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            ${quiz.questions.map((q, idx) => {
+                                const isAnswered = currentQuizState.selectedAnswers.hasOwnProperty(idx);
+                                const isCurrent = idx === questionNum;
+                                const isCorrect = isAnswered && currentQuizState.selectedAnswers[idx] === quiz.questions[idx].correct;
+                                
+                                let buttonClass = 'question-nav-btn px-4 py-2 rounded-lg font-semibold border-2 ';
+                                if (isCurrent) {
+                                    buttonClass += 'bg-indigo-600 text-white border-indigo-600';
+                                } else if (isAnswered && isCorrect) {
+                                    buttonClass += 'bg-green-100 text-green-800 border-green-300';
+                                } else if (isAnswered) {
+                                    buttonClass += 'bg-red-100 text-red-800 border-red-300';
+                                } else {
+                                    buttonClass += 'bg-white text-gray-700 border-gray-300 hover:border-indigo-400';
+                                }
+                                
+                                return `
+                                    <button onclick="goToQuestion(${idx})" 
+                                        class="${buttonClass}">
+                                        ${idx + 1}
+                                        ${isAnswered && isCorrect ? ' ✓' : ''}
+                                        ${isAnswered && !isCorrect ? ' ✗' : ''}
+                                    </button>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Question Content -->
                     <div class="bg-gray-50 rounded-lg p-6 mb-6">
                         <h3 class="text-xl font-semibold mb-6">${question.question}</h3>
                         <div class="space-y-3" id="quiz-options">
                             ${question.options.map((opt, idx) => `
                                 <button onclick="selectAnswer(${idx})" 
-                                    class="quiz-option w-full text-left p-4 rounded-lg border-2 ${getOptionClass(idx, question.correct)}
-                                    ${currentQuizState.selectedAnswer === null ? 'hover:border-indigo-400 cursor-pointer' : 'cursor-default'}"
-                                    ${currentQuizState.selectedAnswer !== null ? 'disabled' : ''}>
+                                    class="quiz-option w-full text-left p-4 rounded-lg border-2 ${getOptionClass(idx, question.correct, selectedAnswer)}
+                                    ${selectedAnswer === undefined ? 'hover:border-indigo-400 cursor-pointer' : 'cursor-default'}"
+                                    ${selectedAnswer !== undefined ? 'disabled' : ''}>
                                     <span class="font-semibold">${String.fromCharCode(65 + idx)}.</span> ${opt}
-                                    ${currentQuizState.selectedAnswer !== null && idx === question.correct ? ' ✓' : ''}
-                                    ${currentQuizState.selectedAnswer === idx && idx !== question.correct ? ' ✗' : ''}
+                                    ${selectedAnswer !== undefined && idx === question.correct ? ' ✓' : ''}
+                                    ${selectedAnswer === idx && idx !== question.correct ? ' ✗' : ''}
                                 </button>
                             `).join('')}
                         </div>
                     </div>
 
-                    ${currentQuizState.selectedAnswer !== null ? `
-                        <div class="bg-${currentQuizState.selectedAnswer === question.correct ? 'green' : 'red'}-50 border-2 border-${currentQuizState.selectedAnswer === question.correct ? 'green' : 'red'}-200 rounded-lg p-6 mb-6">
-                            <h4 class="font-bold text-lg mb-2 text-${currentQuizState.selectedAnswer === question.correct ? 'green' : 'red'}-800">
-                                ${currentQuizState.selectedAnswer === question.correct ? '✓ Correct!' : '✗ Incorrect'}
+                    <!-- Explanation (if answered) -->
+                    ${selectedAnswer !== undefined ? `
+                        <div class="bg-${selectedAnswer === question.correct ? 'green' : 'red'}-50 border-2 border-${selectedAnswer === question.correct ? 'green' : 'red'}-200 rounded-lg p-6 mb-6">
+                            <h4 class="font-bold text-lg mb-2 text-${selectedAnswer === question.correct ? 'green' : 'red'}-800">
+                                ${selectedAnswer === question.correct ? '✓ Correct!' : '✗ Incorrect'}
                             </h4>
                             <p class="text-gray-800 whitespace-pre-line">${question.explanation}</p>
                         </div>
-                        <button onclick="nextQuestion()" 
-                            class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700">
-                            ${currentQuizState.currentQuestion < quiz.questions.length - 1 ? 'Next Question' : 'View Results'}
-                        </button>
                     ` : ''}
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex gap-3">
+                        <button onclick="previousQuestion()" 
+                            ${questionNum === 0 ? 'disabled' : ''}
+                            class="flex-1 bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700 disabled:bg-gray-300 disabled:cursor-not-allowed">
+                            ← Previous
+                        </button>
+                        
+                        ${Object.keys(currentQuizState.selectedAnswers).length === quiz.questions.length ? `
+                            <button onclick="showResults()" 
+                                class="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700">
+                                View Results 📊
+                            </button>
+                        ` : ''}
+                        
+                        <button onclick="nextQuestion()" 
+                            ${questionNum === quiz.questions.length - 1 ? 'disabled' : ''}
+                            class="flex-1 bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 disabled:bg-gray-300 disabled:cursor-not-allowed">
+                            Next →
+                        </button>
+                    </div>
+
+                    <!-- Reset Quiz Button -->
+                    <button onclick="resetQuiz()" 
+                        class="w-full mt-3 bg-gray-200 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-300">
+                        🔄 Reset Quiz
+                    </button>
                 </div>
             `;
         }
 
-        function getOptionClass(idx, correct) {
-            if (currentQuizState.selectedAnswer === null) {
+        function getOptionClass(idx, correct, selectedAnswer) {
+            if (selectedAnswer === undefined) {
                 return 'border-gray-300 bg-white';
             }
             if (idx === correct) {
                 return 'border-green-500 bg-green-100';
             }
-            if (idx === currentQuizState.selectedAnswer) {
+            if (idx === selectedAnswer) {
                 return 'border-red-500 bg-red-100';
             }
             return 'border-gray-300 bg-gray-100';
         }
 
         function selectAnswer(idx) {
-            if (currentQuizState.selectedAnswer !== null) return;
+            const questionNum = currentQuizState.currentQuestion;
+            if (currentQuizState.selectedAnswers[questionNum] !== undefined) return;
             
             const quiz = getCurrentQuiz();
-            const question = quiz.quiz.questions[currentQuizState.currentQuestion];
-            currentQuizState.selectedAnswer = idx;
+            const question = quiz.quiz.questions[questionNum];
+            currentQuizState.selectedAnswers[questionNum] = idx;
             
-            if (idx === question.correct) {
-                currentQuizState.score++;
-            }
-            
-            currentQuizState.answers.push({
-                question: currentQuizState.currentQuestion,
-                correct: idx === question.correct
-            });
-            
+            loadSection(getCurrentSection());
+        }
+
+        function goToQuestion(questionNum) {
+            currentQuizState.currentQuestion = questionNum;
             loadSection(getCurrentSection());
         }
 
@@ -324,53 +388,79 @@
             const quiz = getCurrentQuiz();
             if (currentQuizState.currentQuestion < quiz.quiz.questions.length - 1) {
                 currentQuizState.currentQuestion++;
-                currentQuizState.selectedAnswer = null;
                 loadSection(getCurrentSection());
-            } else {
-                showResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuizState.currentQuestion > 0) {
+                currentQuizState.currentQuestion--;
+                loadSection(getCurrentSection());
             }
         }
 
         function showResults() {
             const quiz = getCurrentQuiz();
-            const percentage = Math.round((currentQuizState.score / quiz.quiz.questions.length) * 100);
+            let score = 0;
+            
+            quiz.quiz.questions.forEach((q, idx) => {
+                if (currentQuizState.selectedAnswers[idx] === q.correct) {
+                    score++;
+                }
+            });
+            
+            const percentage = Math.round((score / quiz.quiz.questions.length) * 100);
             
             document.getElementById('content').innerHTML = `
                 <div class="max-w-2xl mx-auto text-center">
                     <div class="text-6xl mb-4">🎉</div>
                     <h2 class="text-3xl font-bold mb-4">Quiz Complete!</h2>
                     <div class="text-5xl font-bold text-indigo-600 mb-2">${percentage}%</div>
-                    <p class="text-xl text-gray-600 mb-6">You scored ${currentQuizState.score} out of ${quiz.quiz.questions.length}</p>
+                    <p class="text-xl text-gray-600 mb-6">You scored ${score} out of ${quiz.quiz.questions.length}</p>
                     
                     <div class="bg-gray-50 rounded-lg p-6 mb-6">
                         <h3 class="font-semibold text-lg mb-3">Performance Breakdown</h3>
                         <div class="space-y-2">
-                            ${currentQuizState.answers.map((ans, idx) => `
-                                <div class="flex items-center justify-between">
-                                    <span>Question ${idx + 1}</span>
-                                    <span>${ans.correct ? '✓' : '✗'}</span>
-                                </div>
-                            `).join('')}
+                            ${quiz.quiz.questions.map((q, idx) => {
+                                const isCorrect = currentQuizState.selectedAnswers[idx] === q.correct;
+                                return `
+                                    <div class="flex items-center justify-between p-2 rounded ${isCorrect ? 'bg-green-50' : 'bg-red-50'}">
+                                        <span>Question ${idx + 1}</span>
+                                        <span class="font-semibold">${isCorrect ? '✓ Correct' : '✗ Incorrect'}</span>
+                                    </div>
+                                `;
+                            }).join('')}
                         </div>
                     </div>
 
-                    <button onclick="resetQuiz()" 
-                        class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 mb-3">
-                        Retake Quiz
-                    </button>
-                    <button onclick="loadSection('home')" 
-                        class="w-full bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700">
-                        Back to Home
-                    </button>
+                    <div class="space-y-3">
+                        <button onclick="reviewQuiz()" 
+                            class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700">
+                            📖 Review Answers
+                        </button>
+                        <button onclick="resetQuiz()" 
+                            class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700">
+                            🔄 Retake Quiz
+                        </button>
+                        <button onclick="loadSection('home')" 
+                            class="w-full bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700">
+                            🏠 Back to Home
+                        </button>
+                    </div>
                 </div>
             `;
+        }
+
+        function reviewQuiz() {
+            currentQuizState.currentQuestion = 0;
+            loadSection(getCurrentSection());
         }
 
         function resetQuiz() {
             currentQuizState = {
                 currentQuestion: 0,
                 score: 0,
-                selectedAnswer: null,
+                selectedAnswers: {},
                 answers: []
             };
             loadSection(getCurrentSection());
