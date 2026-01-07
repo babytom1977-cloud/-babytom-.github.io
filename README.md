@@ -1,2 +1,2 @@
-# -babytom-.github.io
-Course content
+# -my-course-website-.github.io
+My online course platform
