@@ -1,0 +1,1153 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+@font-face
+	{font-family:"Segoe UI Emoji";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+@font-face
+	{font-family:"Segoe UI Symbol";
+	panose-1:2 11 5 2 4 2 4 2 2 3;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Aptos",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal>&lt;!DOCTYPE html&gt;</p>
+
+<p class=MsoNormal>&lt;html lang=&quot;en&quot;&gt;</p>
+
+<p class=MsoNormal>&lt;head&gt;</p>
+
+<p class=MsoNormal>    &lt;meta charset=&quot;UTF-8&quot;&gt;</p>
+
+<p class=MsoNormal>    &lt;meta name=&quot;viewport&quot;
+content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</p>
+
+<p class=MsoNormal>    &lt;title&gt;My Course Website&lt;/title&gt;</p>
+
+<p class=MsoNormal>    &lt;script
+src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;</p>
+
+<p class=MsoNormal>    &lt;style&gt;</p>
+
+<p class=MsoNormal>        .quiz-option:hover { transform: translateX(4px); }</p>
+
+<p class=MsoNormal>        .quiz-option { transition: all 0.2s; }</p>
+
+<p class=MsoNormal>        .sidebar-link { transition: all 0.2s; }</p>
+
+<p class=MsoNormal>        .sidebar-link:hover { background-color: rgba(99,
+102, 241, 0.1); }</p>
+
+<p class=MsoNormal>    &lt;/style&gt;</p>
+
+<p class=MsoNormal>&lt;/head&gt;</p>
+
+<p class=MsoNormal>&lt;body class=&quot;bg-gray-50&quot;&gt;</p>
+
+<p class=MsoNormal>    &lt;div class=&quot;flex min-h-screen&quot;&gt;</p>
+
+<p class=MsoNormal>        &lt;!-- Sidebar --&gt;</p>
+
+<p class=MsoNormal>        &lt;div class=&quot;w-64 bg-white
+shadow-lg&quot;&gt;</p>
+
+<p class=MsoNormal>            &lt;div class=&quot;p-6 bg-indigo-600
+text-white&quot;&gt;</p>
+
+<p class=MsoNormal>                &lt;h1 class=&quot;text-2xl
+font-bold&quot;&gt;<span style='font-family:"Segoe UI Emoji",sans-serif'>&#128218;</span>
+My Courses&lt;/h1&gt;</p>
+
+<p class=MsoNormal>                &lt;p class=&quot;text-sm text-indigo-100
+mt-1&quot;&gt;Learning Platform&lt;/p&gt;</p>
+
+<p class=MsoNormal>            &lt;/div&gt;</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            &lt;nav class=&quot;p-4&quot;
+id=&quot;sidebar&quot;&gt;</p>
+
+<p class=MsoNormal>                &lt;!-- Navigation will be generated here
+--&gt;</p>
+
+<p class=MsoNormal>            &lt;/nav&gt;</p>
+
+<p class=MsoNormal>        &lt;/div&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        &lt;!-- Main Content --&gt;</p>
+
+<p class=MsoNormal>        &lt;div class=&quot;flex-1&quot;&gt;</p>
+
+<p class=MsoNormal>            &lt;!-- Header --&gt;</p>
+
+<p class=MsoNormal>            &lt;header class=&quot;bg-white shadow-sm
+p-6&quot;&gt;</p>
+
+<p class=MsoNormal>                &lt;div class=&quot;max-w-6xl
+mx-auto&quot;&gt;</p>
+
+<p class=MsoNormal>                    &lt;h2 id=&quot;pageTitle&quot;
+class=&quot;text-3xl font-bold text-gray-800&quot;&gt;Welcome to Your
+Course&lt;/h2&gt;</p>
+
+<p class=MsoNormal>                    &lt;p id=&quot;pageSubtitle&quot;
+class=&quot;text-gray-600 mt-1&quot;&gt;Select a section from the sidebar to
+begin&lt;/p&gt;</p>
+
+<p class=MsoNormal>                &lt;/div&gt;</p>
+
+<p class=MsoNormal>            &lt;/header&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>            &lt;!-- Content Area --&gt;</p>
+
+<p class=MsoNormal>            &lt;main class=&quot;max-w-6xl mx-auto
+p-6&quot;&gt;</p>
+
+<p class=MsoNormal>                &lt;div id=&quot;content&quot;
+class=&quot;bg-white rounded-xl shadow-lg p-8&quot;&gt;</p>
+
+<p class=MsoNormal>                    &lt;!-- Content will be loaded here
+--&gt;</p>
+
+<p class=MsoNormal>                &lt;/div&gt;</p>
+
+<p class=MsoNormal>            &lt;/main&gt;</p>
+
+<p class=MsoNormal>        &lt;/div&gt;</p>
+
+<p class=MsoNormal>    &lt;/div&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>    &lt;script&gt;</p>
+
+<p class=MsoNormal>        // COURSE DATA - Add your content here</p>
+
+<p class=MsoNormal>        const courseData = {</p>
+
+<p class=MsoNormal>            courses: [</p>
+
+<p class=MsoNormal>                {</p>
+
+<p class=MsoNormal>                    id: 'chem122',</p>
+
+<p class=MsoNormal>                    title: 'CHEM 122',</p>
+
+<p class=MsoNormal>                    sections: [</p>
+
+<p class=MsoNormal>                        {</p>
+
+<p class=MsoNormal>                            id: 'home',</p>
+
+<p class=MsoNormal>                            title: '<span style='font-family:
+"Segoe UI Emoji",sans-serif'>&#127968;</span> Home',</p>
+
+<p class=MsoNormal>                            type: 'page',</p>
+
+<p class=MsoNormal>                            content: {</p>
+
+<p class=MsoNormal>                                title: 'Welcome to CHEM
+122',</p>
+
+<p class=MsoNormal>                                subtitle: 'General Chemistry
+II',</p>
+
+<p class=MsoNormal>                                body: `</p>
+
+<p class=MsoNormal>                                    &lt;div
+class=&quot;prose max-w-none&quot;&gt;</p>
+
+<p class=MsoNormal>                                        &lt;h3
+class=&quot;text-2xl font-bold mb-4&quot;&gt;Course Overview&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                        &lt;p
+class=&quot;text-gray-700 mb-4&quot;&gt;</p>
+
+<p class=MsoNormal>                                            Welcome to
+General Chemistry II! This course builds on the foundations </p>
+
+<p class=MsoNormal>                                            from CHEM 121
+and explores advanced topics in chemistry.</p>
+
+<p class=MsoNormal>                                        &lt;/p&gt;</p>
+
+<p class=MsoNormal>                                        </p>
+
+<p class=MsoNormal>                                        &lt;h4
+class=&quot;text-xl font-semibold mt-6 mb-3&quot;&gt;What You'll
+Learn:&lt;/h4&gt;</p>
+
+<p class=MsoNormal>                                        &lt;ul
+class=&quot;list-disc list-inside space-y-2 text-gray-700&quot;&gt;</p>
+
+<p class=MsoNormal>                                           
+&lt;li&gt;Stoichiometry and Chemical Calculations&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                           
+&lt;li&gt;Empirical and Molecular Formulas&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                           
+&lt;li&gt;Limiting Reactants and Percent Yield&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                           
+&lt;li&gt;Chemical Reactions and Equations&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/ul&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                                        &lt;div
+class=&quot;bg-blue-50 border-l-4 border-blue-500 p-4 mt-6&quot;&gt;</p>
+
+<p class=MsoNormal>                                            &lt;p
+class=&quot;font-semibold text-blue-900&quot;&gt;<span style='font-family:"Segoe UI Emoji",sans-serif'>&#128204;</span>
+Getting Started&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                            &lt;p
+class=&quot;text-blue-800 mt-2&quot;&gt;Use the sidebar to navigate through
+lessons, </p>
+
+<p class=MsoNormal>                                            practice
+quizzes, and additional resources. Good luck!&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                    &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                `</p>
+
+<p class=MsoNormal>                            }</p>
+
+<p class=MsoNormal>                        },</p>
+
+<p class=MsoNormal>                        {</p>
+
+<p class=MsoNormal>                            id: 'chapter3-notes',</p>
+
+<p class=MsoNormal>                            title: '<span style='font-family:
+"Segoe UI Emoji",sans-serif'>&#128221;</span> Chapter 3: Notes',</p>
+
+<p class=MsoNormal>                            type: 'page',</p>
+
+<p class=MsoNormal>                            content: {</p>
+
+<p class=MsoNormal>                                title: 'Chapter 3:
+Stoichiometry &amp; Empirical Formulas',</p>
+
+<p class=MsoNormal>                                subtitle: 'Study Notes and
+Key Concepts',</p>
+
+<p class=MsoNormal>                                body: `</p>
+
+<p class=MsoNormal>                                    &lt;div
+class=&quot;space-y-6&quot;&gt;</p>
+
+<p class=MsoNormal>                                        &lt;section&gt;</p>
+
+<p class=MsoNormal>                                            &lt;h3
+class=&quot;text-xl font-bold text-indigo-600 mb-3&quot;&gt;<span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#128300;</span> Empirical
+Formulas&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                            &lt;div
+class=&quot;bg-gray-50 p-4 rounded-lg&quot;&gt;</p>
+
+<p class=MsoNormal>                                                &lt;p
+class=&quot;mb-3&quot;&gt;&lt;strong&gt;Definition:&lt;/strong&gt; The simplest
+whole-number ratio of atoms in a compound.&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                                &lt;p
+class=&quot;mb-2&quot;&gt;&lt;strong&gt;Steps to
+Calculate:&lt;/strong&gt;&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                                &lt;ol
+class=&quot;list-decimal list-inside space-y-1 ml-4&quot;&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Assume 100g sample (convert percentages to grams)&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Convert grams to moles using atomic masses&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Divide all mole values by the smallest number&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Round to nearest whole numbers (or multiply to get whole
+numbers)&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                &lt;/ol&gt;</p>
+
+<p class=MsoNormal>                                            &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/section&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                                        &lt;section&gt;</p>
+
+<p class=MsoNormal>                                            &lt;h3
+class=&quot;text-xl font-bold text-indigo-600 mb-3&quot;&gt;<span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#9878;&#65039;</span>
+Stoichiometry&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                            &lt;div
+class=&quot;bg-gray-50 p-4 rounded-lg&quot;&gt;</p>
+
+<p class=MsoNormal>                                                &lt;p
+class=&quot;mb-3&quot;&gt;Stoichiometry is the calculation of reactants and
+products in chemical reactions.&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                                &lt;p
+class=&quot;mb-2&quot;&gt;&lt;strong&gt;Key Conversion
+Factors:&lt;/strong&gt;&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                                &lt;ul
+class=&quot;list-disc list-inside space-y-1 ml-4&quot;&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Molar mass (g/mol)&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Avogadro's number: 6.022 × 10²³ particles/mol&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Mole ratios from balanced equations&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                &lt;/ul&gt;</p>
+
+<p class=MsoNormal>                                            &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/section&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                                        &lt;section&gt;</p>
+
+<p class=MsoNormal>                                            &lt;h3
+class=&quot;text-xl font-bold text-indigo-600 mb-3&quot;&gt;<span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#127919;</span> Limiting
+Reactants&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                            &lt;div
+class=&quot;bg-gray-50 p-4 rounded-lg&quot;&gt;</p>
+
+<p class=MsoNormal>                                                &lt;p
+class=&quot;mb-3&quot;&gt;The reactant that is completely consumed first,
+limiting product formation.&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                                &lt;p
+class=&quot;mb-2&quot;&gt;&lt;strong&gt;How to
+Identify:&lt;/strong&gt;&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                                &lt;ol
+class=&quot;list-decimal list-inside space-y-1 ml-4&quot;&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Calculate moles of each reactant&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Use mole ratios to determine which runs out first&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                   
+&lt;li&gt;Use limiting reactant to calculate product yield&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                                &lt;/ol&gt;</p>
+
+<p class=MsoNormal>                                            &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/section&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                                        &lt;section&gt;</p>
+
+<p class=MsoNormal>                                            &lt;h3
+class=&quot;text-xl font-bold text-indigo-600 mb-3&quot;&gt;<span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#128202;</span> Percent
+Yield&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                            &lt;div
+class=&quot;bg-gray-50 p-4 rounded-lg&quot;&gt;</p>
+
+<p class=MsoNormal>                                                &lt;p
+class=&quot;mb-3&quot;&gt;&lt;strong&gt;Formula:&lt;/strong&gt;&lt;/p&gt;</p>
+
+<p class=MsoNormal>                                                &lt;div
+class=&quot;bg-white p-3 rounded border-2 border-indigo-200 text-center text-lg
+font-mono&quot;&gt;</p>
+
+<p class=MsoNormal>                                                    % Yield
+= (Actual Yield / Theoretical Yield) × 100%</p>
+
+<p class=MsoNormal>                                                &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                            &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/section&gt;</p>
+
+<p class=MsoNormal>                                    &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                `</p>
+
+<p class=MsoNormal>                            }</p>
+
+<p class=MsoNormal>                        },</p>
+
+<p class=MsoNormal>                        {</p>
+
+<p class=MsoNormal>                            id: 'chapter3-quiz',</p>
+
+<p class=MsoNormal>                            title: '<span style='font-family:
+"Segoe UI Emoji",sans-serif'>&#9989;</span> Chapter 3: Quiz',</p>
+
+<p class=MsoNormal>                            type: 'quiz',</p>
+
+<p class=MsoNormal>                            quiz: {</p>
+
+<p class=MsoNormal>                                title: 'Chapter 3:
+Stoichiometry Quiz',</p>
+
+<p class=MsoNormal>                                questions: [</p>
+
+<p class=MsoNormal>                                    {</p>
+
+<p class=MsoNormal>                                        question: &quot;A
+sample of Rubbing Alcohol was found to contain 60.0% carbon, and 13.4%
+hydrogen, and the remaining mass was due to oxygen. Calculate the empirical
+formula of Rubbing Alcohol.&quot;,</p>
+
+<p class=MsoNormal>                                        options:
+[&quot;C5H13O2&quot;, &quot;C5H13.4O1.67&quot;, &quot;CHO&quot;,
+&quot;C3H8O&quot;, &quot;C3H8O2&quot;],</p>
+
+<p class=MsoNormal>                                        correct: 3,</p>
+
+<p class=MsoNormal>                                        explanation:
+&quot;To determine the empirical formula:\n\n1. Assume 100g sample: C=60.0g,
+H=13.4g, O=26.6g\n2. Convert to moles: C=4.996mol, H=13.29mol, O=1.6625mol\n3.
+Divide by smallest (1.6625): C&#8776;3, H&#8776;8, O=1\n4. Empirical formula:
+C3H8O&quot;</p>
+
+<p class=MsoNormal>                                    },</p>
+
+<p class=MsoNormal>                                    {</p>
+
+<p class=MsoNormal>                                        question: &quot;What
+is the % by mass of carbon in C5H12?&quot;,</p>
+
+<p class=MsoNormal>                                        options:
+[&quot;29.4%&quot;, &quot;5%&quot;, &quot;12%&quot;, &quot;83.23%&quot;,
+&quot;16.67%&quot;],</p>
+
+<p class=MsoNormal>                                        correct: 3,</p>
+
+<p class=MsoNormal>                                        explanation:
+&quot;1. Molar mass of C5H12 = (5×12.01) + (12×1.008) = 72.146 g/mol\n2. Mass
+of carbon = 5×12.01 = 60.05g\n3. %C = (60.05/72.146)×100 &#8776; 83.24%&quot;</p>
+
+<p class=MsoNormal>                                    },</p>
+
+<p class=MsoNormal>                                    {</p>
+
+<p class=MsoNormal>                                        question: &quot;If
+216 g of C5H12 was used how many molecules of C5H12 were used?&quot;,</p>
+
+<p class=MsoNormal>                                        options:
+[&quot;3&quot;, &quot;6.02 × 10²³&quot;, &quot;1.8 × 10²&#8308;&quot;,
+&quot;216&quot;, &quot;17 × 10²³&quot;],</p>
+
+<p class=MsoNormal>                                        correct: 2,</p>
+
+<p class=MsoNormal>                                        explanation:
+&quot;1. Molar mass C5H12 = 72.146 g/mol\n2. Moles = 216g / 72.146g/mol &#8776;
+2.994 mol\n3. Molecules = 2.994 × 6.022×10²³ &#8776; 1.80×10²&#8308;
+molecules&quot;</p>
+
+<p class=MsoNormal>                                    },</p>
+
+<p class=MsoNormal>                                    {</p>
+
+<p class=MsoNormal>                                        question: &quot;How
+many grams of O2 are needed to react with 1 mole of pentane (C5H12)?&quot;,</p>
+
+<p class=MsoNormal>                                        options: [&quot;32
+g&quot;, &quot;104 g&quot;, &quot;192 g&quot;, &quot;256 g&quot;,
+&quot;128&quot;],</p>
+
+<p class=MsoNormal>                                        correct: 3,</p>
+
+<p class=MsoNormal>                                        explanation:
+&quot;1. Balanced equation: C5H12 + 8O2 &#8594; 5CO2 + 6H2O\n2. 1 mole C5H12
+needs 8 moles O2\n3. Molar mass O2 = 32.00 g/mol\n4. Mass = 8 × 32.00 = 256
+g&quot;</p>
+
+<p class=MsoNormal>                                    },</p>
+
+<p class=MsoNormal>                                    {</p>
+
+<p class=MsoNormal>                                        question:
+&quot;Nitrogen gas can react with hydrogen gas to form gaseous ammonia. If 4.7
+g of nitrogen reacts with 9.8 g of hydrogen, how much ammonia is formed?&quot;,</p>
+
+<p class=MsoNormal>                                        options: [&quot;5.5
+g&quot;, &quot;5.7 g&quot;, &quot;16.7 g&quot;, &quot;55.55 g&quot;, &quot;19.6
+g&quot;],</p>
+
+<p class=MsoNormal>                                        correct: 1,</p>
+
+<p class=MsoNormal>                                        explanation:
+&quot;N2 + 3H2 &#8594; 2NH3\n1. Moles N2 = 4.7/28.02 = 0.1677 mol\n2. Moles H2
+= 9.8/2.016 = 4.862 mol\n3. N2 is limiting\n4. Moles NH3 = 0.1677×2 = 0.3354
+mol\n5. Mass = 0.3354×17.034 &#8776; 5.71 g&quot;</p>
+
+<p class=MsoNormal>                                    }</p>
+
+<p class=MsoNormal>                                ]</p>
+
+<p class=MsoNormal>                            }</p>
+
+<p class=MsoNormal>                        },</p>
+
+<p class=MsoNormal>                        {</p>
+
+<p class=MsoNormal>                            id: 'resources',</p>
+
+<p class=MsoNormal>                            title: '<span style='font-family:
+"Segoe UI Emoji",sans-serif'>&#128279;</span> Resources',</p>
+
+<p class=MsoNormal>                            type: 'page',</p>
+
+<p class=MsoNormal>                            content: {</p>
+
+<p class=MsoNormal>                                title: 'Additional
+Resources',</p>
+
+<p class=MsoNormal>                                subtitle: 'Helpful links and
+materials',</p>
+
+<p class=MsoNormal>                                body: `</p>
+
+<p class=MsoNormal>                                    &lt;div
+class=&quot;space-y-6&quot;&gt;</p>
+
+<p class=MsoNormal>                                        &lt;div
+class=&quot;bg-blue-50 border border-blue-200 rounded-lg p-6&quot;&gt;</p>
+
+<p class=MsoNormal>                                            &lt;h3
+class=&quot;text-lg font-bold text-blue-900 mb-3&quot;&gt;<span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#128218;</span> Online
+Textbooks&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                            &lt;ul
+class=&quot;space-y-2&quot;&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-blue-600
+hover:underline&quot;&gt;• OpenStax Chemistry 2e (Free)&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-blue-600
+hover:underline&quot;&gt;• ChemLibreTexts&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-blue-600
+hover:underline&quot;&gt;• Khan Academy Chemistry&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                            &lt;/ul&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                                        &lt;div
+class=&quot;bg-green-50 border border-green-200 rounded-lg p-6&quot;&gt;</p>
+
+<p class=MsoNormal>                                            &lt;h3
+class=&quot;text-lg font-bold text-green-900 mb-3&quot;&gt;<span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#129518;</span> Calculators
+&amp; Tools&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                            &lt;ul
+class=&quot;space-y-2&quot;&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-green-600
+hover:underline&quot;&gt;• Molar Mass Calculator&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-green-600
+hover:underline&quot;&gt;• Chemical Equation Balancer&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-green-600
+hover:underline&quot;&gt;• Periodic Table Interactive&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                            &lt;/ul&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                                        &lt;div
+class=&quot;bg-purple-50 border border-purple-200 rounded-lg p-6&quot;&gt;</p>
+
+<p class=MsoNormal>                                            &lt;h3
+class=&quot;text-lg font-bold text-purple-900 mb-3&quot;&gt;<span
+style='font-family:"Segoe UI Emoji",sans-serif'>&#127909;</span> Video
+Tutorials&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                                            &lt;ul
+class=&quot;space-y-2&quot;&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-purple-600
+hover:underline&quot;&gt;• Professor Dave Explains&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-purple-600
+hover:underline&quot;&gt;• Crash Course Chemistry&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                               
+&lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-purple-600
+hover:underline&quot;&gt;• The Organic Chemistry Tutor&lt;/a&gt;&lt;/li&gt;</p>
+
+<p class=MsoNormal>                                            &lt;/ul&gt;</p>
+
+<p class=MsoNormal>                                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                    &lt;/div&gt;</p>
+
+<p class=MsoNormal>                                `</p>
+
+<p class=MsoNormal>                            }</p>
+
+<p class=MsoNormal>                        }</p>
+
+<p class=MsoNormal>                    ]</p>
+
+<p class=MsoNormal>                }</p>
+
+<p class=MsoNormal>            ]</p>
+
+<p class=MsoNormal>        };</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        // QUIZ ENGINE</p>
+
+<p class=MsoNormal>        let currentQuizState = {</p>
+
+<p class=MsoNormal>            currentQuestion: 0,</p>
+
+<p class=MsoNormal>            score: 0,</p>
+
+<p class=MsoNormal>            selectedAnswer: null,</p>
+
+<p class=MsoNormal>            answers: []</p>
+
+<p class=MsoNormal>        };</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function renderQuiz(quizData) {</p>
+
+<p class=MsoNormal>            const quiz = quizData.quiz;</p>
+
+<p class=MsoNormal>            const question =
+quiz.questions[currentQuizState.currentQuestion];</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            return `</p>
+
+<p class=MsoNormal>                &lt;div class=&quot;max-w-3xl
+mx-auto&quot;&gt;</p>
+
+<p class=MsoNormal>                    &lt;div class=&quot;mb-6&quot;&gt;</p>
+
+<p class=MsoNormal>                        &lt;h2 class=&quot;text-2xl
+font-bold text-gray-800 mb-2&quot;&gt;${quiz.title}&lt;/h2&gt;</p>
+
+<p class=MsoNormal>                        &lt;div class=&quot;flex
+items-center justify-between&quot;&gt;</p>
+
+<p class=MsoNormal>                            &lt;span
+class=&quot;text-gray-600&quot;&gt;Question ${currentQuizState.currentQuestion
++ 1} of ${quiz.questions.length}&lt;/span&gt;</p>
+
+<p class=MsoNormal>                            &lt;span
+class=&quot;bg-indigo-100 px-3 py-1 rounded-full text-indigo-800
+font-semibold&quot;&gt;Score:
+${currentQuizState.score}/${quiz.questions.length}&lt;/span&gt;</p>
+
+<p class=MsoNormal>                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>                        &lt;div class=&quot;w-full
+bg-gray-200 rounded-full h-2 mt-3&quot;&gt;</p>
+
+<p class=MsoNormal>                            &lt;div
+class=&quot;bg-indigo-600 h-2 rounded-full transition-all&quot;
+style=&quot;width: ${((currentQuizState.currentQuestion + 1) /
+quiz.questions.length) * 100}%&quot;&gt;&lt;/div&gt;</p>
+
+<p class=MsoNormal>                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>                    &lt;/div&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                    &lt;div class=&quot;bg-gray-50
+rounded-lg p-6 mb-6&quot;&gt;</p>
+
+<p class=MsoNormal>                        &lt;h3 class=&quot;text-xl
+font-semibold mb-6&quot;&gt;${question.question}&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                        &lt;div class=&quot;space-y-3&quot;
+id=&quot;quiz-options&quot;&gt;</p>
+
+<p class=MsoNormal>                            ${question.options.map((opt,
+idx) =&gt; `</p>
+
+<p class=MsoNormal>                                &lt;button
+onclick=&quot;selectAnswer(${idx})&quot; </p>
+
+<p class=MsoNormal>                                    class=&quot;quiz-option
+w-full text-left p-4 rounded-lg border-2 ${getOptionClass(idx,
+question.correct)}</p>
+
+<p class=MsoNormal>                                   
+${currentQuizState.selectedAnswer === null ? 'hover:border-indigo-400
+cursor-pointer' : 'cursor-default'}&quot;</p>
+
+<p class=MsoNormal>                                   
+${currentQuizState.selectedAnswer !== null ? 'disabled' : ''}&gt;</p>
+
+<p class=MsoNormal>                                    &lt;span
+class=&quot;font-semibold&quot;&gt;${String.fromCharCode(65 +
+idx)}.&lt;/span&gt; ${opt}</p>
+
+<p class=MsoNormal>                                   
+${currentQuizState.selectedAnswer !== null &amp;&amp; idx === question.correct
+? ' &#10003;' : ''}</p>
+
+<p class=MsoNormal>                                   
+${currentQuizState.selectedAnswer === idx &amp;&amp; idx !== question.correct ?
+' <span style='font-family:"Segoe UI Symbol",sans-serif'>&#10007;</span>' : ''}</p>
+
+<p class=MsoNormal>                                &lt;/button&gt;</p>
+
+<p class=MsoNormal>                            `).join('')}</p>
+
+<p class=MsoNormal>                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>                    &lt;/div&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                    ${currentQuizState.selectedAnswer !==
+null ? `</p>
+
+<p class=MsoNormal>                        &lt;div
+class=&quot;bg-${currentQuizState.selectedAnswer === question.correct ? 'green'
+: 'red'}-50 border-2 border-${currentQuizState.selectedAnswer ===
+question.correct ? 'green' : 'red'}-200 rounded-lg p-6 mb-6&quot;&gt;</p>
+
+<p class=MsoNormal>                            &lt;h4 class=&quot;font-bold
+text-lg mb-2 text-${currentQuizState.selectedAnswer === question.correct ?
+'green' : 'red'}-800&quot;&gt;</p>
+
+<p class=MsoNormal>                               
+${currentQuizState.selectedAnswer === question.correct ? '&#10003; Correct!' :
+'<span style='font-family:"Segoe UI Symbol",sans-serif'>&#10007;</span>
+Incorrect'}</p>
+
+<p class=MsoNormal>                            &lt;/h4&gt;</p>
+
+<p class=MsoNormal>                            &lt;p class=&quot;text-gray-800
+whitespace-pre-line&quot;&gt;${question.explanation}&lt;/p&gt;</p>
+
+<p class=MsoNormal>                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>                        &lt;button
+onclick=&quot;nextQuestion()&quot; </p>
+
+<p class=MsoNormal>                            class=&quot;w-full bg-indigo-600
+text-white py-3 rounded-lg font-semibold hover:bg-indigo-700&quot;&gt;</p>
+
+<p class=MsoNormal>                           
+${currentQuizState.currentQuestion &lt; quiz.questions.length - 1 ? 'Next
+Question' : 'View Results'}</p>
+
+<p class=MsoNormal>                        &lt;/button&gt;</p>
+
+<p class=MsoNormal>                    ` : ''}</p>
+
+<p class=MsoNormal>                &lt;/div&gt;</p>
+
+<p class=MsoNormal>            `;</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function getOptionClass(idx, correct) {</p>
+
+<p class=MsoNormal>            if (currentQuizState.selectedAnswer === null) {</p>
+
+<p class=MsoNormal>                return 'border-gray-300 bg-white';</p>
+
+<p class=MsoNormal>            }</p>
+
+<p class=MsoNormal>            if (idx === correct) {</p>
+
+<p class=MsoNormal>                return 'border-green-500 bg-green-100';</p>
+
+<p class=MsoNormal>            }</p>
+
+<p class=MsoNormal>            if (idx === currentQuizState.selectedAnswer) {</p>
+
+<p class=MsoNormal>                return 'border-red-500 bg-red-100';</p>
+
+<p class=MsoNormal>            }</p>
+
+<p class=MsoNormal>            return 'border-gray-300 bg-gray-100';</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function selectAnswer(idx) {</p>
+
+<p class=MsoNormal>            if (currentQuizState.selectedAnswer !== null)
+return;</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            const quiz = getCurrentQuiz();</p>
+
+<p class=MsoNormal>            const question =
+quiz.quiz.questions[currentQuizState.currentQuestion];</p>
+
+<p class=MsoNormal>            currentQuizState.selectedAnswer = idx;</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            if (idx === question.correct) {</p>
+
+<p class=MsoNormal>                currentQuizState.score++;</p>
+
+<p class=MsoNormal>            }</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            currentQuizState.answers.push({</p>
+
+<p class=MsoNormal>                question: currentQuizState.currentQuestion,</p>
+
+<p class=MsoNormal>                correct: idx === question.correct</p>
+
+<p class=MsoNormal>            });</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            loadSection(getCurrentSection());</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function nextQuestion() {</p>
+
+<p class=MsoNormal>            const quiz = getCurrentQuiz();</p>
+
+<p class=MsoNormal>            if (currentQuizState.currentQuestion &lt;
+quiz.quiz.questions.length - 1) {</p>
+
+<p class=MsoNormal>                currentQuizState.currentQuestion++;</p>
+
+<p class=MsoNormal>                currentQuizState.selectedAnswer = null;</p>
+
+<p class=MsoNormal>                loadSection(getCurrentSection());</p>
+
+<p class=MsoNormal>            } else {</p>
+
+<p class=MsoNormal>                showResults();</p>
+
+<p class=MsoNormal>            }</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function showResults() {</p>
+
+<p class=MsoNormal>            const quiz = getCurrentQuiz();</p>
+
+<p class=MsoNormal>            const percentage =
+Math.round((currentQuizState.score / quiz.quiz.questions.length) * 100);</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            document.getElementById('content').innerHTML = `</p>
+
+<p class=MsoNormal>                &lt;div class=&quot;max-w-2xl mx-auto
+text-center&quot;&gt;</p>
+
+<p class=MsoNormal>                    &lt;div class=&quot;text-6xl
+mb-4&quot;&gt;<span style='font-family:"Segoe UI Emoji",sans-serif'>&#127881;</span>&lt;/div&gt;</p>
+
+<p class=MsoNormal>                    &lt;h2 class=&quot;text-3xl font-bold
+mb-4&quot;&gt;Quiz Complete!&lt;/h2&gt;</p>
+
+<p class=MsoNormal>                    &lt;div class=&quot;text-5xl font-bold
+text-indigo-600 mb-2&quot;&gt;${percentage}%&lt;/div&gt;</p>
+
+<p class=MsoNormal>                    &lt;p class=&quot;text-xl text-gray-600
+mb-6&quot;&gt;You scored ${currentQuizState.score} out of
+${quiz.quiz.questions.length}&lt;/p&gt;</p>
+
+<p class=MsoNormal>                    </p>
+
+<p class=MsoNormal>                    &lt;div class=&quot;bg-gray-50
+rounded-lg p-6 mb-6&quot;&gt;</p>
+
+<p class=MsoNormal>                        &lt;h3 class=&quot;font-semibold
+text-lg mb-3&quot;&gt;Performance Breakdown&lt;/h3&gt;</p>
+
+<p class=MsoNormal>                        &lt;div
+class=&quot;space-y-2&quot;&gt;</p>
+
+<p class=MsoNormal>                           
+${currentQuizState.answers.map((ans, idx) =&gt; `</p>
+
+<p class=MsoNormal>                                &lt;div class=&quot;flex
+items-center justify-between&quot;&gt;</p>
+
+<p class=MsoNormal>                                    &lt;span&gt;Question
+${idx + 1}&lt;/span&gt;</p>
+
+<p class=MsoNormal>                                   
+&lt;span&gt;${ans.correct ? '&#10003;' : '<span style='font-family:"Segoe UI Symbol",sans-serif'>&#10007;</span>'}&lt;/span&gt;</p>
+
+<p class=MsoNormal>                                &lt;/div&gt;</p>
+
+<p class=MsoNormal>                            `).join('')}</p>
+
+<p class=MsoNormal>                        &lt;/div&gt;</p>
+
+<p class=MsoNormal>                    &lt;/div&gt;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>                    &lt;button
+onclick=&quot;resetQuiz()&quot; </p>
+
+<p class=MsoNormal>                        class=&quot;w-full bg-indigo-600
+text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 mb-3&quot;&gt;</p>
+
+<p class=MsoNormal>                        Retake Quiz</p>
+
+<p class=MsoNormal>                    &lt;/button&gt;</p>
+
+<p class=MsoNormal>                    &lt;button
+onclick=&quot;loadSection('home')&quot; </p>
+
+<p class=MsoNormal>                        class=&quot;w-full bg-gray-600
+text-white py-3 rounded-lg font-semibold hover:bg-gray-700&quot;&gt;</p>
+
+<p class=MsoNormal>                        Back to Home</p>
+
+<p class=MsoNormal>                    &lt;/button&gt;</p>
+
+<p class=MsoNormal>                &lt;/div&gt;</p>
+
+<p class=MsoNormal>            `;</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function resetQuiz() {</p>
+
+<p class=MsoNormal>            currentQuizState = {</p>
+
+<p class=MsoNormal>                currentQuestion: 0,</p>
+
+<p class=MsoNormal>                score: 0,</p>
+
+<p class=MsoNormal>                selectedAnswer: null,</p>
+
+<p class=MsoNormal>                answers: []</p>
+
+<p class=MsoNormal>            };</p>
+
+<p class=MsoNormal>            loadSection(getCurrentSection());</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        // NAVIGATION</p>
+
+<p class=MsoNormal>        let currentCourse = 'chem122';</p>
+
+<p class=MsoNormal>        let currentSection = 'home';</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function getCurrentCourse() {</p>
+
+<p class=MsoNormal>            return courseData.courses.find(c =&gt; c.id ===
+currentCourse);</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function getCurrentSection() {</p>
+
+<p class=MsoNormal>            return currentSection;</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function getCurrentQuiz() {</p>
+
+<p class=MsoNormal>            const course = getCurrentCourse();</p>
+
+<p class=MsoNormal>            return course.sections.find(s =&gt; s.id ===
+currentSection);</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function loadSection(sectionId) {</p>
+
+<p class=MsoNormal>            currentSection = sectionId;</p>
+
+<p class=MsoNormal>            const course = getCurrentCourse();</p>
+
+<p class=MsoNormal>            const section = course.sections.find(s =&gt;
+s.id === sectionId);</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            if (section.type === 'quiz') {</p>
+
+<p class=MsoNormal>               
+document.getElementById('pageTitle').textContent = section.title;</p>
+
+<p class=MsoNormal>               
+document.getElementById('pageSubtitle').textContent = 'Test your knowledge';</p>
+
+<p class=MsoNormal>                document.getElementById('content').innerHTML
+= renderQuiz(section);</p>
+
+<p class=MsoNormal>            } else {</p>
+
+<p class=MsoNormal>               
+document.getElementById('pageTitle').textContent = section.content.title;</p>
+
+<p class=MsoNormal>               
+document.getElementById('pageSubtitle').textContent = section.content.subtitle;</p>
+
+<p class=MsoNormal>                document.getElementById('content').innerHTML
+= section.content.body;</p>
+
+<p class=MsoNormal>            }</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            renderSidebar();</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        function renderSidebar() {</p>
+
+<p class=MsoNormal>            const course = getCurrentCourse();</p>
+
+<p class=MsoNormal>            const sidebar =
+document.getElementById('sidebar');</p>
+
+<p class=MsoNormal>            </p>
+
+<p class=MsoNormal>            sidebar.innerHTML = course.sections.map(section
+=&gt; `</p>
+
+<p class=MsoNormal>                &lt;button
+onclick=&quot;loadSection('${section.id}')&quot; </p>
+
+<p class=MsoNormal>                    class=&quot;sidebar-link w-full
+text-left px-4 py-3 rounded-lg ${currentSection === section.id ? 'bg-indigo-100
+text-indigo-700 font-semibold' : 'text-gray-700 hover:bg-gray-100'}&quot;&gt;</p>
+
+<p class=MsoNormal>                    ${section.title}</p>
+
+<p class=MsoNormal>                &lt;/button&gt;</p>
+
+<p class=MsoNormal>            `).join('');</p>
+
+<p class=MsoNormal>        }</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>        // Initialize</p>
+
+<p class=MsoNormal>        loadSection('home');</p>
+
+<p class=MsoNormal>    &lt;/script&gt;</p>
+
+<p class=MsoNormal>&lt;/body&gt;</p>
+
+<p class=MsoNormal>&lt;/html&gt;</p>
+
+</div>
+
+</body>
+
+</html>
